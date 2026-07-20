@@ -21,7 +21,8 @@
         "test:raw": "playwright test",
         "test:headed": "playwright test --headed",
         "test:ui": "playwright test --ui",
-        "ci": "npm run check:all"
+        "ci": "npm run check:all",
+        "mcp:playwright": "playwright-mcp --headless"
     },
     "keywords": [],
     "author": "",
@@ -31,8 +32,9 @@
         "*.{ts,tsx,mts,cts}": ["biome check --write"]
     },
     "devDependencies": {
-        "@eslint/js": "^10.0.1",
         "@biomejs/biome": "^1.9.4",
+        "@eslint/js": "^10.0.1",
+        "@faker-js/faker": "^9.9.0",
         "@playwright/test": "^1.61.1",
         "@types/node": "^26.1.1",
         "@typescript-eslint/eslint-plugin": "8.64.0",
@@ -43,5 +45,8 @@
         "husky": "^9.1.7",
         "lint-staged": "^17.1.0",
         "typescript": "^6.0.3"
+    },
+    "dependencies": {
+        "winston": "^3.19.0"
     }
 }
