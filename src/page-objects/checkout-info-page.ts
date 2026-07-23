@@ -1,5 +1,5 @@
-import type { CheckoutInfo } from "../test-data/checkout-info";
-import { BasePage } from "./base-page";
+import { BasePage } from "@/page-objects/base-page";
+import type { CheckoutInfo } from "@/test-data/checkout-info";
 
 export class CheckoutInfoPage extends BasePage {
     readonly root = this.page.getByTestId("checkout-info-container");

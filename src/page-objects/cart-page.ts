@@ -1,5 +1,5 @@
-import { BasePage } from "./base-page";
-import { CartItem } from "./element-containers/cart-item";
+import { BasePage } from "@/page-objects/base-page";
+import { CartItem } from "@/page-objects/element-containers/cart-item";
 
 export class CartPage extends BasePage {
     readonly root = this.page.getByTestId("cart-contents-container");

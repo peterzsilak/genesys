@@ -1,5 +1,5 @@
-import { testTags } from "../config/test-tags";
-import { expect, test } from "../fixtures/web.fixture";
+import { testTags } from "@/config/test-tags";
+import { expect, test } from "@/fixtures/web.fixture";
 
 test.describe("Case 4 - iFrame and multi-tab handling", () => {
     test(

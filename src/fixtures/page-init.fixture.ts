@@ -1,14 +1,14 @@
 import { test as base, expect } from "@playwright/test";
 
-import { getCredentialByUsername } from "../config/credential-loader";
-import { CartPage } from "../page-objects/cart-page";
-import { CheckoutCompletePage } from "../page-objects/checkout-complete-page";
-import { CheckoutInfoPage } from "../page-objects/checkout-info-page";
-import { CheckoutSummaryPage } from "../page-objects/checkout-summary-page";
-import { FooterPage } from "../page-objects/footer-page";
-import { HeaderPage } from "../page-objects/header-page";
-import { InventoryPage } from "../page-objects/inventory-page";
-import { LoginPage } from "../page-objects/login-page";
+import { getCredentialByUsername } from "@/config/credential-loader";
+import { CartPage } from "@/page-objects/cart-page";
+import { CheckoutCompletePage } from "@/page-objects/checkout-complete-page";
+import { CheckoutInfoPage } from "@/page-objects/checkout-info-page";
+import { CheckoutSummaryPage } from "@/page-objects/checkout-summary-page";
+import { FooterPage } from "@/page-objects/footer-page";
+import { HeaderPage } from "@/page-objects/header-page";
+import { InventoryPage } from "@/page-objects/inventory-page";
+import { LoginPage } from "@/page-objects/login-page";
 
 export interface AuthOptions {
     username: string | undefined;

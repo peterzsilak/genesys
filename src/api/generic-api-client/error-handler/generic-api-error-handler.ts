@@ -1,5 +1,8 @@
-import { ApiError } from "./api-error";
-import type { ApiErrorHandler, ApiErrorInput } from "./api-error-handler";
+import { ApiError } from "@/api/generic-api-client/error-handler/api-error";
+import type {
+    ApiErrorHandler,
+    ApiErrorInput,
+} from "@/api/generic-api-client/error-handler/api-error-handler";
 
 export class GenericApiErrorHandler implements ApiErrorHandler {
     handleError(input: ApiErrorInput): never {

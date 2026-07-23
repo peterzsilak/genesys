@@ -1,8 +1,8 @@
 import type winston from "winston";
 
-import type { UserDto } from "../api/users/dto/user.dto";
-import type { UsersRestClient } from "../api/users/users-rest-client";
-import type { LoggerFactoryService } from "./logger-factory.service";
+import type { UserDto } from "@/api/users/dto/user.dto";
+import type { UsersRestClient } from "@/api/users/users-rest-client";
+import type { LoggerFactoryService } from "@/services/logger-factory.service";
 
 export interface UserContact {
     readonly name: string;

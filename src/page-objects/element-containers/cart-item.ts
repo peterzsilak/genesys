@@ -1,4 +1,4 @@
-import { ElementContainer } from "./element-container";
+import { ElementContainer } from "@/page-objects/element-containers/element-container";
 
 export class CartItem extends ElementContainer<CartItem> {
     readonly name = this.root.getByTestId("inventory-item-name");

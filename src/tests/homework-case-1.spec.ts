@@ -1,6 +1,6 @@
-import { testTags } from "../config/test-tags";
-import { expect, test } from "../fixtures/page-init.fixture";
-import { aCheckoutInfo } from "../test-data/checkout-info.builder";
+import { testTags } from "@/config/test-tags";
+import { expect, test } from "@/fixtures/page-init.fixture";
+import { aCheckoutInfo } from "@/test-data/checkout-info.builder";
 
 const backpackName = "Sauce Labs Backpack";
 const fleeceJacketName = "Sauce Labs Fleece Jacket";

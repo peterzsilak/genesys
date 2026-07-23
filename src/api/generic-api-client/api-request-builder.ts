@@ -1,10 +1,13 @@
 import type { APIRequestContext, APIResponse } from "@playwright/test";
 import type winston from "winston";
 
-import { ApiError } from "./error-handler/api-error";
-import type { ApiErrorHandler } from "./error-handler/api-error-handler";
-import type { HttpMethod } from "./http-method";
-import { type RetryOptions, defaultRetryOptions } from "./retry-options";
+import { ApiError } from "@/api/generic-api-client/error-handler/api-error";
+import type { ApiErrorHandler } from "@/api/generic-api-client/error-handler/api-error-handler";
+import type { HttpMethod } from "@/api/generic-api-client/http-method";
+import {
+    type RetryOptions,
+    defaultRetryOptions,
+} from "@/api/generic-api-client/retry-options";
 
 export interface ApiRequestConfig {
     readonly method: HttpMethod;

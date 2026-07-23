@@ -1,5 +1,5 @@
-import { testTags } from "../config/test-tags";
-import { expect, test } from "../fixtures/page-init.fixture";
+import { testTags } from "@/config/test-tags";
+import { expect, test } from "@/fixtures/page-init.fixture";
 
 test.describe("Case 2 - Mandatory field error", () => {
     test(

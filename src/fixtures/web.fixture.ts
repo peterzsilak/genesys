@@ -1,8 +1,8 @@
 import { test as base, expect } from "@playwright/test";
 
-import { Guru99HomePage } from "../page-objects/guru99-home-page";
-import { RichTextEditorPage } from "../page-objects/rich-text-editor-page";
-import { SeleniumTutorialPage } from "../page-objects/selenium-tutorial-page";
+import { Guru99HomePage } from "@/page-objects/guru99-home-page";
+import { RichTextEditorPage } from "@/page-objects/rich-text-editor-page";
+import { SeleniumTutorialPage } from "@/page-objects/selenium-tutorial-page";
 
 export interface WebFixtures {
     guru99HomePage: Guru99HomePage;

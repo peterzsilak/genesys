@@ -1,8 +1,8 @@
 import { test as base, expect } from "@playwright/test";
 
-import { UsersRestClient } from "../api/users/users-rest-client";
-import { LoggerFactoryService } from "../services/logger-factory.service";
-import { UsersService } from "../services/users-service";
+import { UsersRestClient } from "@/api/users/users-rest-client";
+import { LoggerFactoryService } from "@/services/logger-factory.service";
+import { UsersService } from "@/services/users-service";
 
 export interface ApiFixtures {
     loggerFactory: LoggerFactoryService;

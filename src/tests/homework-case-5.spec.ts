@@ -1,5 +1,5 @@
-import { testTags } from "../config/test-tags";
-import { expect, test } from "../fixtures/api.fixture";
+import { testTags } from "@/config/test-tags";
+import { expect, test } from "@/fixtures/api.fixture";
 
 test.describe("Case 5 - REST API testing", () => {
     test(

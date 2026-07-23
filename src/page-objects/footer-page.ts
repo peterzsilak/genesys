@@ -1,4 +1,4 @@
-import { BasePage } from "./base-page";
+import { BasePage } from "@/page-objects/base-page";
 
 export class FooterPage extends BasePage {
     readonly root = this.page.getByTestId("footer");
