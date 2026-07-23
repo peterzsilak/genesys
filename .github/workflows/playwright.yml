@@ -67,10 +67,6 @@ jobs:
   execute-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.61.1-noble
-    env:
-      HOME: /root
     needs: discover-shards
     if: ${{ needs.discover-shards.outputs.test_count != '0' }}
     strategy:
@@ -87,6 +83,8 @@ jobs:
         cache-dependency-path: package-lock.json
     - name: Install dependencies
       run: npm ci
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
     - name: Run Playwright tests
       env:
         PLAYWRIGHT_TEST_ARGS: ${{ vars.PLAYWRIGHT_TEST_ARGS }}
