@@ -1,5 +1,5 @@
-import type { Credential } from "../config/credential";
-import { BasePage } from "./base-page";
+import type { Credential } from "@/config/credential";
+import { BasePage } from "@/page-objects/base-page";
 
 export class LoginPage extends BasePage {
     readonly root = this.page.getByTestId("login-container");

@@ -6,7 +6,7 @@ import {
     type Credential,
     type CredentialRegistry,
     acceptedUsernames,
-} from "./credential";
+} from "@/config/credential";
 
 const credentialPath = path.resolve(
     process.cwd(),

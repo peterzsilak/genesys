@@ -1,5 +1,5 @@
+import { BasePage } from "@/page-objects/base-page";
 import type { Locator } from "@playwright/test";
-import { BasePage } from "./base-page";
 
 export class RichTextEditorPage extends BasePage {
     readonly editor = this.page.locator(".ck-editor__editable_inline").first();

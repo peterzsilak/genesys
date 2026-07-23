@@ -1,4 +1,4 @@
-import type { ApiErrorInput } from "./api-error-handler";
+import type { ApiErrorInput } from "@/api/generic-api-client/error-handler/api-error-handler";
 
 export class ApiError extends Error {
     readonly status: number;

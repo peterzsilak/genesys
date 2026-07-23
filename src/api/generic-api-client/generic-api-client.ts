@@ -1,13 +1,13 @@
 import type { APIRequestContext } from "@playwright/test";
 import type winston from "winston";
 
-import type { LoggerFactoryService } from "../../services/logger-factory.service";
-import { ApiRequestBuilder } from "./api-request-builder";
-import type { ApiErrorHandler } from "./error-handler/api-error-handler";
-import { GenericApiErrorHandler } from "./error-handler/generic-api-error-handler";
-import type { GenericApiClientConfig } from "./generic-api-client-config";
-import { HttpMethod } from "./http-method";
-import { defaultRetryOptions } from "./retry-options";
+import { ApiRequestBuilder } from "@/api/generic-api-client/api-request-builder";
+import type { ApiErrorHandler } from "@/api/generic-api-client/error-handler/api-error-handler";
+import { GenericApiErrorHandler } from "@/api/generic-api-client/error-handler/generic-api-error-handler";
+import type { GenericApiClientConfig } from "@/api/generic-api-client/generic-api-client-config";
+import { HttpMethod } from "@/api/generic-api-client/http-method";
+import { defaultRetryOptions } from "@/api/generic-api-client/retry-options";
+import type { LoggerFactoryService } from "@/services/logger-factory.service";
 
 export interface PollOptions {
     readonly timeoutMs: number;

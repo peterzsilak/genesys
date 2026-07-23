@@ -1,10 +1,10 @@
 import type { APIRequestContext } from "@playwright/test";
 
-import type { LoggerFactoryService } from "../../services/logger-factory.service";
-import { GenericApiClient } from "../generic-api-client/generic-api-client";
-import type { GenericApiClientConfig } from "../generic-api-client/generic-api-client-config";
-import type { UserDto } from "./dto/user.dto";
-import { usersRestClientConfig } from "./users-rest-client.config";
+import { GenericApiClient } from "@/api/generic-api-client/generic-api-client";
+import type { GenericApiClientConfig } from "@/api/generic-api-client/generic-api-client-config";
+import type { UserDto } from "@/api/users/dto/user.dto";
+import { usersRestClientConfig } from "@/api/users/users-rest-client.config";
+import type { LoggerFactoryService } from "@/services/logger-factory.service";
 
 export class UsersRestClient extends GenericApiClient {
     private static readonly USERS_PATH = "/users";

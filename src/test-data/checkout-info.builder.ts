@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-import type { CheckoutInfo } from "./checkout-info";
+import type { CheckoutInfo } from "@/test-data/checkout-info";
 
 export class CheckoutInfoBuilder {
     private info: CheckoutInfo;

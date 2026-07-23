@@ -1,4 +1,4 @@
-import type { GenericApiClientConfig } from "../generic-api-client/generic-api-client-config";
+import type { GenericApiClientConfig } from "@/api/generic-api-client/generic-api-client-config";
 
 export const usersRestClientConfig: GenericApiClientConfig = {
     baseUrl: "https://jsonplaceholder.typicode.com",

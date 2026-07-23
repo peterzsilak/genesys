@@ -1,5 +1,5 @@
-import { BasePage } from "./base-page";
-import { InventoryItem } from "./element-containers/inventory-item";
+import { BasePage } from "@/page-objects/base-page";
+import { InventoryItem } from "@/page-objects/element-containers/inventory-item";
 
 export class InventoryPage extends BasePage {
     readonly root = this.page.getByTestId("inventory-container");

@@ -1,4 +1,4 @@
-import type { RetryOptions } from "./retry-options";
+import type { RetryOptions } from "@/api/generic-api-client/retry-options";
 
 export interface GenericApiClientConfig {
     readonly baseUrl: string;

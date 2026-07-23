@@ -1,5 +1,5 @@
+import { BasePage } from "@/page-objects/base-page";
 import type { FrameLocator } from "@playwright/test";
-import { BasePage } from "./base-page";
 
 export class Guru99HomePage extends BasePage {
     readonly adImage = this.adFrame().locator("a").first();
