@@ -3,12 +3,15 @@ import type { Locator } from "@playwright/test";
 
 export class RichTextEditorPage extends BasePage {
     readonly editor = this.page.locator(".ck-editor__editable_inline").first();
-    private readonly boldButton = this.page.locator(
-        '.ck-toolbar button.ck-button[data-cke-tooltip-text^="Bold"]',
-    );
-    private readonly underlineButton = this.page.locator(
-        '.ck-toolbar button.ck-button[data-cke-tooltip-text^="Underline"]',
-    );
+    private readonly toolbar = this.page.locator(".ck-toolbar").first();
+    private readonly boldButton = this.toolbar.getByRole("button", {
+        name: "Bold",
+        exact: true,
+    });
+    private readonly underlineButton = this.toolbar.getByRole("button", {
+        name: "Underline",
+        exact: true,
+    });
 
     async open(): Promise<void> {
         await this.page.goto("https://onlinehtmleditor.dev", {
