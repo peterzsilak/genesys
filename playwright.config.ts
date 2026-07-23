@@ -22,7 +22,9 @@ export default defineConfig({
     /* Retry on CI only */
     retries: isCI ? 1 : 4,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-    reporter: isCI ? "blob" : "html",
+    reporter: isCI
+        ? "blob"
+        : [["html"], ["json", { outputFile: "json-report/results.json" }]],
     /* Opt out of parallel tests on CI. */
     ...(isCI ? { workers: 1 } : {}),
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
