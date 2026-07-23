@@ -38,6 +38,7 @@ jobs:
     needs: run-quality-checks
     outputs:
       test_count: ${{ steps.compute.outputs.test_count }}
+      shard_count: ${{ steps.compute.outputs.shard_count }}
       shards: ${{ steps.compute.outputs.shards }}
     steps:
     - uses: actions/checkout@v7
@@ -52,17 +53,24 @@ jobs:
       id: compute
       env:
         PLAYWRIGHT_TEST_ARGS: ${{ vars.PLAYWRIGHT_TEST_ARGS }}
+        MAX_SHARDS: "5"
       run: |
         TEST_COUNT="$(npx playwright test --list ${PLAYWRIGHT_TEST_ARGS:-} | grep -E -c ':[0-9]+:[0-9]+' || true)"
         TEST_COUNT="$(echo "$TEST_COUNT" | tr -d '[:space:]')"
 
         if [ "$TEST_COUNT" -gt 0 ]; then
-          SHARDS="$(seq 1 "$TEST_COUNT" | jq -R . | jq -s -c .)"
+          SHARD_COUNT="$TEST_COUNT"
+          if [ "$SHARD_COUNT" -gt "$MAX_SHARDS" ]; then
+            SHARD_COUNT="$MAX_SHARDS"
+          fi
+          SHARDS="$(seq 1 "$SHARD_COUNT" | jq -R . | jq -s -c .)"
         else
+          SHARD_COUNT=0
           SHARDS='[]'
         fi
 
         echo "test_count=$TEST_COUNT" >> "$GITHUB_OUTPUT"
+        echo "shard_count=$SHARD_COUNT" >> "$GITHUB_OUTPUT"
         echo "shards=$SHARDS" >> "$GITHUB_OUTPUT"
   execute-tests:
     timeout-minutes: 60
@@ -71,7 +79,7 @@ jobs:
     if: ${{ needs.discover-shards.outputs.test_count != '0' }}
     strategy:
       fail-fast: false
-      max-parallel: ${{ fromJSON(needs.discover-shards.outputs.test_count) }}
+      max-parallel: ${{ fromJSON(needs.discover-shards.outputs.shard_count) }}
       matrix:
         shard: ${{ fromJSON(needs.discover-shards.outputs.shards) }}
     steps:
@@ -88,7 +96,7 @@ jobs:
     - name: Run Playwright tests
       env:
         PLAYWRIGHT_TEST_ARGS: ${{ vars.PLAYWRIGHT_TEST_ARGS }}
-      run: npx playwright test --shard=${{ matrix.shard }}/${{ needs.discover-shards.outputs.test_count }} ${PLAYWRIGHT_TEST_ARGS:-}
+      run: npx playwright test --shard=${{ matrix.shard }}/${{ needs.discover-shards.outputs.shard_count }} ${PLAYWRIGHT_TEST_ARGS:-}
     - uses: actions/upload-artifact@v7
       if: ${{ !cancelled() }}
       with:
